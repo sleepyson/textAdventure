@@ -1,15 +1,18 @@
+//Denna funktion visar en prompt där användaren kan skriva in sitt val. Funktionen tar 4 parametrar, händelsen och de olika val användaren har.
 function event(event, choice1, choice2, choice3){
 	userChoice = prompt(event + "\n\n" +
   	"Vad vill du göra? Skriv in ditt val:" + "\n" +
 	choice1 + "\n" +
 	choice2 + "\n" +
 	choice3 + "\n" + "\n" +
-	"4. Avsluta").toLowerCase();
+	"4. Avsluta").toLowerCase();//Konverterar det användaren skriver till gemener.
 }
 
+//Första dialogen för spelet
 function start(){
-	userChoice = "";
+	userChoice = ""; //Återställer userChoice så att tidigare val inte påverkar den kommande while-loopen.
 
+//Repeterar prompten tills användaren har skrivit in ett korrekt val
 	while (userChoice != "stäng av tvn" && userChoice != "gå utomhus" && userChoice != "fyll glaset med vodka" && userChoice != "avsluta" &&
 		userChoice != "1" && userChoice != "2" && userChoice != "3" && userChoice != "4"){
   	event("Du befinner dig hemma i vardagsrummet. Det är mörkt utomhus och TVn är påslagen. På soffbordet ser du ett tomt glas och en flaska vodka.",
@@ -18,6 +21,7 @@ function start(){
 		"3. Fyll glaset med vodka");
 	}
 
+//Använder användarens val för att bestämma vilken dialog som ska komma härnäst. Kallar sedan på den funktion som håller i dialogen.
 	if (userChoice === "stäng av tvn" || userChoice === "1"){
 		tvOff();
 	} else if (userChoice === "gå utomhus" || userChoice === "2") {
@@ -30,6 +34,7 @@ function start(){
 	}
 }
 
+//Fungerar likadant som funktionen start();
 function tvOff(){
 	userChoice = "";
 
@@ -53,6 +58,7 @@ function tvOff(){
 	}
 }
 
+//Fungerar likadant som funktionen start();
 function goOut(){
 	userChoice = "";
 
@@ -74,6 +80,7 @@ function goOut(){
 	}
 }
 
+//Fungerar likadant som funktionen start();
 function pourVodka(){
 	userChoice = "";
 
@@ -97,6 +104,8 @@ function pourVodka(){
 	}
 }
 
+//Alla följande funktioner är "endgame-screens" så de visar bara upp en alert med infomation om vad som har hänt.
+//Därefter kallas funktionen start() och spelet börjar från första dialogrutan igen.
 function fallDeath(){
   	alert("Eftersom du inte kan se någonting så snubblar du över soffbordet, slår skallen i hyllkanten och dör. Gratulerar.");
 
@@ -121,6 +130,6 @@ function fallAsleep(){
   	start();
 }
 
-var userChoice;
+var userChoice; //Variabel som håller i användarens val.
 
-start();
+start();//Kallar på funktionen med den första dialogen och startar alltså spelet.
