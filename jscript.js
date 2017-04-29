@@ -10,20 +10,21 @@ function event(event, choice1, choice2, choice3){
 function start(){
 	userChoice = "";
 
-	while (userChoice != "stäng av tvn" && userChoice != "gå utomhus" && userChoice != "fyll glaset med vodka" && userChoice != "avsluta"){
+	while (userChoice != "stäng av tvn" && userChoice != "gå utomhus" && userChoice != "fyll glaset med vodka" && userChoice != "avsluta" &&
+		userChoice != "1" && userChoice != "2" && userChoice != "3" && userChoice != "4"){
   	event("Du befinner dig hemma i vardagsrummet. Det är mörkt utomhus och TVn är påslagen. På soffbordet ser du ett tomt glas och en flaska vodka.",
 		"1. Stäng av TVn",
 		"2. Gå utomhus",
 		"3. Fyll glaset med vodka");
 	}
 
-	if (userChoice === "stäng av tvn"){
+	if (userChoice === "stäng av tvn" || userChoice === "1"){
 		tvOff();
-	} else if (userChoice === "gå utomhus") {
+	} else if (userChoice === "gå utomhus" || userChoice === "2") {
 		goOut();
-	} else if (userChoice === "fyll glaset med vodka") {
+	} else if (userChoice === "fyll glaset med vodka" || userChoice === "3") {
 		pourVodka();
-	} else if (userChoice === "avsluta") {
+	} else if (userChoice === "avsluta" || userChoice === "4") {
 		alert("Hejdå!");
 		window.close();
 	}
@@ -32,20 +33,21 @@ function start(){
 function tvOff(){
 	userChoice = "";
 
-	while (userChoice != "sätt på tvn igen" && userChoice != "gå utomhus" && userChoice != "fyll glaset med vodka" && userChoice != "avsluta"){
+	while (userChoice != "sätt på tvn igen" && userChoice != "gå utomhus" && userChoice != "fyll glaset med vodka" && userChoice != "avsluta" &&
+		userChoice != "1" && userChoice != "2" && userChoice != "3" && userChoice != "4"){
   	event("Du går fram till TVn och stänger av den. Det var den enda ljuskällan i rummet och nu är det så mörkt att du inte kan se någonting.",
 		"1. Sätt på TVn igen",
 		"2. Gå utomhus",
 		"3. Fyll glaset med vodka");
 	}
 
-	if (userChoice === "sätt på tvn igen"){
+	if (userChoice === "sätt på tvn igen" || userChoice === "1"){
 		start();
-	} else if (userChoice === "gå utomhus") {
+	} else if (userChoice === "gå utomhus" || userChoice === "2") {
 		fallDeath();
-	} else if (userChoice === "fyll glaset med vodka") {
+	} else if (userChoice === "fyll glaset med vodka" || userChoice === "3") {
 		fallDeath();
-	} else if (userChoice === "avsluta") {
+	} else if (userChoice === "avsluta" || userChoice === "4") {
 		alert("Hejdå!");
 		window.close();
 	}
@@ -54,18 +56,19 @@ function tvOff(){
 function goOut(){
 	userChoice = "";
 
-	while (userChoice != "gå tillbaka inomhus" && userChoice != "vandra ut i mörkret" && userChoice != "avsluta"){
+	while (userChoice != "gå tillbaka inomhus" && userChoice != "vandra ut i mörkret" && userChoice != "avsluta" &&
+		userChoice != "1" && userChoice != "2" && userChoice != "3"){
   	event("Du kliver ut genom dörren. Snön glimmar i månskenet och det är tyst. Du förundras över naturen en stund men börjar snart darra av kyla.",
 		"1. Gå tillbaka inomhus",
 		"2. Vandra ut i mörkret", "",
 		"3. Avsluta");
 	}
 
-	if (userChoice === "gå tillbaka inomhus"){
+	if (userChoice === "gå tillbaka inomhus" || userChoice === "1"){
 		start();
-	} else if (userChoice === "vandra ut i mörkret") {
+	} else if (userChoice === "vandra ut i mörkret" || userChoice === "2") {
 		coldDeath();
-	} else if (userChoice === "avsluta") {
+	} else if (userChoice === "avsluta" || userChoice === "3") {
 		alert("Hejdå!");
 		window.close();
 	}
@@ -74,20 +77,21 @@ function goOut(){
 function pourVodka(){
 	userChoice = "";
 
-	while (userChoice != "stäng av tvn" && userChoice != "gå utomhus" && userChoice != "fyll glaset med vodka" && userChoice != "avsluta"){
+	while (userChoice != "stäng av tvn" && userChoice != "gå utomhus" && userChoice != "fyll glaset med vodka" && userChoice != "avsluta" &&
+		userChoice != "1" && userChoice != "2" && userChoice != "3" && userChoice != "4"){
   	event("Du fyller glaset med vodka och sveper allting på en gång. Eftersom du redan druckit lite tidigare så slår det här till rejält.",
 		"1. Stäng av TVn",
 		"2. Gå utomhus",
 		"3. Fyll glaset med vodka");
 	}
 
-	if (userChoice === "stäng av tvn"){
+	if (userChoice === "stäng av tvn" || userChoice === "1"){
 		drunkDeath();
-	} else if (userChoice === "gå utomhus") {
+	} else if (userChoice === "gå utomhus" || userChoice === "2") {
 		drunkDeath();
-	} else if (userChoice === "fyll glaset med vodka") {
+	} else if (userChoice === "fyll glaset med vodka" || userChoice === "3") {
 		fallAsleep();
-	} else if (userChoice === "avsluta") {
+	} else if (userChoice === "avsluta" || userChoice === "4") {
 		alert("Hejdå!");
 		window.close();
 	}
